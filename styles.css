@@ -168,7 +168,21 @@ body {
   margin: 0;
   margin-top: 8px;
 }
-
+@media screen and (max-width: 600px) {
+  body {
+    display: flex;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+  .item:not(:nth-child(4)) .circle::after {
+    left: 80px;
+    height: 88px;
+    animation: 1s animated-line-mobile forwards linear;
+  }
+}
 @keyframes animate-description {
   0% {
     opacity: 0;
@@ -177,7 +191,14 @@ body {
     opacity: 1;
   }
 }
-
+@keyframes animated-line-mobile {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 190px;
+  }
+}
 @keyframes animated-line {
   0% {
     width: 0;
